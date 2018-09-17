@@ -22,13 +22,13 @@ cp ./zcu102_wrapper_gate.bit.bin /lib/firmware/
 
 echo zcu102_wrapper_gate.bit.bin > /sys/class/fpga_manager/fpga0/firmware
 
-2. freq_control_zcu102_1816.elf: This executable runs on the ARM host processor and issues commands to the Elongate framework implemented in the FPGA. 
+2.freq_control_zcu102_1816.elf: This executable runs on the ARM host processor and issues commands to the Elongate framework implemented in the FPGA. 
 
 The use mode is:
 
 freq_control_zcu102_1816.elf 900 1 77 0 1 4  
 
-Parametrs are:
+Parameters are:
 first_freq_index (multiple of 3, indicates the first frequency that the Elongate will use for the BNN)
 
 error_rate_tolerable: indicates how many errors must be present in the dectectors before frequency is reduced. This can be setup to 1 so after one detector error the frequency is mantained. Notice that this are detectors errors and not functional errors. The system detects these errors before they affect the logic itself.
@@ -41,13 +41,13 @@ To change the voltage maxim integrated maxpowertool has been used to connect to 
 
 This adaptive voltage scaling finds the best frequency that can be supported for any given voltage and adjusts the frequency automatically if the device is is slower or if other parameters such as temperature change.  
 
-3. control_source: Source code for freq_control_zcu102_1816
+3.control_source: Source code for freq_control_zcu102_1816
 
 4.BNN_source: source code, parameters and test files for BNN host code that is called by freq_control_zcu102_1816.elf and that calls the BNN implementation in the hardware device.
 
-6. sdsoc_source : c++ BNN source code for sdsoc tool to create hardware bit.bin and hardware library .a
+6.sdsoc_source : c++ BNN source code for sdsoc tool to create hardware bit.bin and hardware library .a
 
-5. elongate_bnn.pdf: BNN processor architecture with 4 compute units and the Elongate IP that determines frequencies in function of voltage.   
+5.elongate_bnn.pdf: BNN processor architecture with 4 compute units and the Elongate IP that determines frequencies in function of voltage.   
 
 
  
