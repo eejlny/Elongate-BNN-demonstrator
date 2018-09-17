@@ -41,9 +41,11 @@ To change the voltage maxim integrated maxpowertool has been used to connect to 
 
 This adaptive voltage scaling finds the best frequency that can be supported for any given voltage and adjusts the frequency automatically if the device is is slower or if other parameters such as temperature change.  
 
-3. freq_control_zcu102_1816_source: Source code for freq_control_zcu102_1816
+3. control_source: Source code for freq_control_zcu102_1816
 
 4.BNN_source: source code, parameters and test files for BNN host code that is called by freq_control_zcu102_1816.elf and that calls the BNN implementation in the hardware device.
+
+6. sdsoc_source : c++ BNN source code for sdsoc tool to create hardware bit.bin and hardware library .a
 
 5. elongate_bnn.pdf: BNN processor architecture with 4 compute units and the Elongate IP that determines frequencies in function of voltage.   
 
