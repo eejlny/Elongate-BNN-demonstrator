@@ -39,7 +39,9 @@ adapt (1 or 0 run until breaks). If set to 1 the system will keep increasing the
 
 To change the voltage maxim integrated maxpowertool has been used to connect to the zcu102 and adjusts the values of the voltage regulators from nominal of 0.85v to a min of 0.55v. It is possible to get the FPGA to do this directly and this has been done in the lower cost zc702.  
 
-This adaptive voltage scaling finds the best frequency that can be supported for any given voltage and adjusts the frequency automatically if the device is is slower or if other parameters such as temperature change.  
+This adaptive voltage scaling finds the best frequency that can be supported for any given voltage and adjusts the frequency automatically if the device is is slower or if other parameters such as temperature change. 
+
+To use the demo the user should initially programmed the FPGA with the supply bit.bin file and then launch freq_control_zcu102_1816 that will launch the BNN application and increase the frequency in steps until finding the frequency when the detectors become active. This is the maximum frequency that can be supported by the voltage level safely. Then using the maxpowertool from MAxim the user could lower the voltage and do a new run to detect the max frequency at the new voltage. 
 
 3.control_source: Source code for freq_control_zcu102_1816
 
